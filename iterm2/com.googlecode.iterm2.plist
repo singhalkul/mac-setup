@@ -4,6 +4,12 @@
 <dict>
 	<key>Default Bookmark Guid</key>
 	<string>DBC4E8E5-D93C-4DB0-93D3-6FDB4BA38F42</string>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_DBC4E8E5-D93C-4DB0-93D3-6FDB4BA38F42</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_DBC4E8E5-D93C-4DB0-93D3-6FDB4BA38F42_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -693,5 +699,7 @@
 			<string>/Users/karun</string>
 		</dict>
 	</array>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 </dict>
 </plist>
