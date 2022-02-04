@@ -4,11 +4,11 @@ source common/functions.sh
 
 # Dock
 echo ">> Setup dock parameters"
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool false
 defaults write com.apple.dock magnification -bool true
-defaults write com.apple.dock tilesize -float 32
-defaults write com.apple.dock largesize -float 92
-defaults write com.apple.dock orientation right
+defaults write com.apple.dock tilesize -float 34
+defaults write com.apple.dock largesize -float 128
+defaults write com.apple.dock orientation bottom
 defaults write com.apple.dock mineffect genie
 defaults write com.apple.dock minimize-to-application true
 delete_if_available com.apple.dock persistent-apps
@@ -20,12 +20,6 @@ killall Dock
 echo ">> Hiding Siri"
 defaults write com.apple.Siri StatusMenuVisible 0
 defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" 0
-
-# Battery and time on the menu
-delete_if_available com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.battery"
-delete_if_available com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.clock"
-delete_if_available com.apple.systemuiserver menuExtras
-delete_if_available com.apple.systemuiserver "NSStatusItem Visible DoNotDisturb"
 
 # Airplay
 defaults write com.apple.airplay showInMenuBarIfPresent false
