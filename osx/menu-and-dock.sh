@@ -5,7 +5,7 @@ source common/functions.sh
 # Dock
 echo ">> Setup dock parameters"
 defaults write com.apple.dock autohide -bool false
-defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock magnification -bool false
 defaults write com.apple.dock tilesize -float 34
 defaults write com.apple.dock largesize -float 128
 defaults write com.apple.dock orientation bottom
