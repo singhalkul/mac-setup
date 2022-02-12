@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/fish
+#!/usr/local/bin/fish
 
 functions | grep omf >/dev/null
 if test $status -ne 0
