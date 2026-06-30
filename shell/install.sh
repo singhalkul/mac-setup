@@ -2,18 +2,32 @@
 echo
 echo "> Setting up shell"
 
-finger $USER | grep -q "Shell: /opt/homebrew/bin/fish"
-if [ $? != 0 ]; then
+# --- Make fish the default shell ---
+if ! finger "$USER" 2>/dev/null | grep -q "Shell: /opt/homebrew/bin/fish"; then
   echo ">> Changing default shell to fish."
-  sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
+  grep -q '/opt/homebrew/bin/fish' /etc/shells || sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
   chsh -s /opt/homebrew/bin/fish
 fi
 
-echo ">> Remove symlink to current fish scripts"
+base=`pwd`
 mkdir -p ~/.config/fish/conf.d
-ls -ld ~/.config/fish/conf.d/* | grep mac-setup/shell | grep -o '/Users/.*/\.config/.* -' | cut -d ' ' -f 1 | xargs rm
-echo ">> Replace with symlink to in-project .fish scripts file. Open a new shell for scripts to take effect."
-ln -s `pwd`/shell/*.fish ~/.config/fish/conf.d
+
+echo ">> Linking fish config (config.fish + conf.d fragments)"
+# config.fish goes to the top level; every other shell/*.fish is a conf.d fragment.
+for f in "$base"/shell/*.fish; do
+  case "$f" in
+    */config.fish)
+      ln -sf "$f" ~/.config/fish/config.fish ;;
+    *)
+      ln -sf "$f" ~/.config/fish/conf.d/ ;;
+  esac
+done
+
+echo ">> Ensuring machine-local secrets.fish exists (gitignored)"
+if [ ! -f ~/.config/fish/conf.d/secrets.fish ]; then
+  cp "$base/shell/secrets.fish.example" ~/.config/fish/conf.d/secrets.fish
+  echo ">>> Created secrets.fish from template — fill in real values."
+fi
 
 echo ">> Install OMF"
 fish ./shell/omf/install.fish

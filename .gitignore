@@ -1,0 +1,9 @@
+# Machine-local secrets (never commit populated secrets)
+shell/secrets.fish
+secrets.fish
+
+# Brew lockfile
+brew/Brewfile.lock.json
+
+# macOS cruft
+.DS_Store

@@ -17,6 +17,17 @@ rm -f brew/Brewfile && brew bundle dump --file=brew/Brewfile
 
 Once you have fish setup, the function `brewfile` will do the above command for you.
 
+> Note: `brew/Brewfile` is hand-curated with section comments and only lists
+> tools that are actually used. A raw `brew bundle dump` will overwrite those
+> comments and re-add everything currently installed — review the diff before
+> committing if you regenerate it.
+
+## Runtimes (Java / Node / Python)
+Managed by [`mise`](https://mise.jdk.tools) (activated in `shell/config.fish`).
+Pin per-project versions with a `.mise.toml` / `.tool-versions`; bare shells
+fall back to the Homebrew-installed runtimes. `pyenv`/`jenv`/SDKMAN are no longer
+used. `uv` handles Python packaging/envs; `pipenv` remains for legacy Pipfiles.
+
 ## OSX settings (or any other plist)
 Setup the aliases
 ```bash
@@ -42,12 +53,15 @@ Update the menu structure as required
 
 1. ~/.ssh
 1. ~/.gnupg
-1. ~/.config/fish/conf.d/secrets.fish
+1. `~/.config/fish/conf.d/secrets.fish` — `install.sh` seeds this from
+   `shell/secrets.fish.example`; fill in real values (work env vars, tokens,
+   GPG signing keys). It is gitignored — never commit populated secrets.
 1. iStat Menus - Menu configurations import
 
 # Pending items
 
 * OSX
     * Spotlight shortcut (currently done by Bartender)
-* Secrets management
+* Move secrets from plain env vars into the macOS Keychain (see
+  `gitlab_token` for the pattern)
 * Automate mac-setup checkout process
