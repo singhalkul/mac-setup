@@ -30,7 +30,3 @@ defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/C
 
 echo ">> Restarting SystemUIServer"
 killall -KILL SystemUIServer
-
-# Spotlight
-# spotlight_key_status=`defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | tr '    64 =     {\n        enabled = 1;' '    64 =     {\n        enabled = 0;'`
-# defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys "$spotlight_key_status"
