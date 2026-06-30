@@ -113,6 +113,7 @@ cask "iterm2"
 cask "claude-code"
 cask "tableplus"
 cask "mongodb-compass"
+cask "postman"
 
 # ---- Java ----
 cask "temurin"
@@ -152,7 +153,6 @@ mas "Pixelmator Pro", id: 1289583905
 # uv / npm global tools
 # ============================================================
 uv "claude-monitor"
-npm "@github/copilot"
 npm "@json2csv/cli"
 
 # ============================================================
