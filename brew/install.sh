@@ -13,11 +13,15 @@ fi
 echo ">> Switching off analytics"
 brew analytics off
 
+echo ">> Trusting third-party taps (required by newer Homebrew before bundle)"
+brew trust alajmo/mani
+brew trust hashicorp/tap
+brew trust mongodb/brew
+
 echo ">> Remove any apps not on the Brewfile"
 brew bundle cleanup --file=brew/Brewfile --force
 
 echo ">> Installing brew and cask apps"
 brew bundle --file=brew/Brewfile
 
-echo ">> Setting up JDK paths"
-sh brew/jdk.sh
+# JDK/Java versions are managed by mise now (jenv removed). See `mise` config.

@@ -1,139 +1,164 @@
+# ============================================================
+# Brewfile — reconciled 2026-06-30 to actual usage.
+# Pruned tools unused in 8 months of shell history and
+# never-opened apps. See git log for the removal rationale.
+# ============================================================
+
+# ---- Taps ----
 tap "alajmo/mani"
 tap "hashicorp/tap"
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
 tap "mongodb/brew"
-tap "warrensbox/tap"
-brew "pycparser"
-brew "cffi"
-brew "tree"
-brew "ansible"
-brew "python@3.10"
-brew "autojump"
-brew "autossh"
-brew "aws-vault", link: false
-brew "awscli"
+
+# ---- Core CLI / shell ----
 brew "bash"
-brew "bat"
-brew "glib"
-brew "lima"
-brew "colima"
-brew "csvkit"
-brew "direnv"
-brew "docker"
-brew "docker-compose"
-brew "docutils"
-brew "erlang"
-brew "fd"
 brew "fish"
+brew "autojump"
+brew "direnv"
 brew "fzf"
+brew "fd"
+brew "bat"
+brew "jq"
+brew "yq"
+brew "tree"
+brew "watch"
+brew "wget"
+brew "p7zip"
+brew "alajmo/mani/mani"
+
+# ---- Git / security ----
 brew "git"
 brew "git-lfs"
 brew "git-secrets"
 brew "gitleaks"
 brew "glab"
-brew "unbound"
-brew "gnutls"
-brew "go"
-brew "harfbuzz"
-brew "gradle"
-brew "helm"
-brew "jenv"
-brew "jq"
-brew "node"
-brew "jupyterlab"
-brew "k9s"
-brew "openjdk"
-brew "kotlin"
-brew "kubernetes-cli"
-brew "kubectx"
-brew "locust"
-brew "mas"
-brew "maven"
-brew "mise"
-brew "mongosh"
-brew "node@14"
-brew "node@16"
-brew "openjdk@17"
-brew "p7zip"
-brew "pgbadger"
-brew "pipenv"
-brew "portaudio"
-brew "postgresql@14", restart_service: :changed
 brew "pre-commit"
-brew "pyenv"
+brew "trivy"
+brew "tfsec"
+brew "trufflehog"
+
+# ---- Cloud / infra / containers ----
+brew "awscli"
+brew "lima"
+brew "colima"
+brew "docker", link: false
+brew "docker-compose"
+brew "qemu"
+brew "k9s"
+brew "kubectx"
+brew "kubernetes-cli"
+brew "tflint"
+brew "hashicorp/tap/terraform"
+brew "sshuttle"
+
+# ---- Languages / runtimes / build ----
+brew "go"
+brew "openjdk"
+brew "openjdk@17"
+brew "gradle"
+brew "jdtls"
+brew "node"
+brew "mise"
+
+# ---- Python ----
 brew "python@3.9"
-brew "python-tk@3.9"
+brew "python@3.10"
 brew "python@3.11"
 brew "python@3.12"
-brew "qemu"
-brew "redis", restart_service: :changed
-brew "restic"
-brew "sbt"
-brew "scala"
-brew "sshuttle"
-brew "tcl-tk"
-brew "tflint"
-brew "tfsec"
-brew "thefuck"
-brew "tldr"
-brew "trivy"
+brew "python-tk@3.9"
+brew "pipenv"
 brew "uv"
-brew "virtualenv"
-brew "watch"
-brew "wget"
-brew "wxwidgets"
-brew "yq"
-brew "alajmo/mani/mani"
-brew "hashicorp/tap/terraform"
+
+# ---- Databases / brokers (installed; NOT auto-started — start manually) ----
+brew "postgresql@14"
+brew "redis"
+brew "rabbitmq"
+brew "mongosh"
 brew "mongodb/brew/mongodb-community"
+brew "mongodb/brew/mongodb-database-tools"
+
+# ---- Media / misc ----
+brew "ffmpeg"
+brew "portaudio"
+brew "wxwidgets"
+brew "unbound"
+brew "mas"
+
+# ---- Low-level deps kept explicit (build chain) ----
+brew "pycparser"
+brew "cffi"
+brew "glib"
+brew "gnutls"
+brew "harfbuzz"
+brew "tcl-tk"
+brew "yasm"
+brew "docutils"
+
+# ============================================================
+# Casks
+# ============================================================
+
+# ---- Browsers / comms ----
+cask "google-chrome"
+cask "firefox"
+cask "slack"
+cask "microsoft-teams"
+cask "zoom"
+
+# ---- Editors / IDEs / dev ----
+cask "visual-studio-code"
+cask "intellij-idea"
+cask "sublime-text"
+cask "iterm2"
+cask "claude-code"
+cask "tableplus"
+cask "mongodb-compass"
+
+# ---- Java ----
+cask "temurin"
+cask "oracle-jdk"
+
+# ---- Utilities / menu bar ----
 cask "alfred"
 cask "appcleaner"
-cask "aws-vault-binary"
-cask "bitwarden"
 cask "clipy"
-cask "docker-desktop"
-cask "dozer"
-cask "firefox"
+cask "stats"
+cask "sloth"
+cask "aws-vault-binary"
+
+# ---- Office / misc ----
+cask "libreoffice"
+cask "microsoft-auto-update"
+
+# ---- Fonts ----
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-powerline-symbols"
-cask "google-chrome"
-cask "intellij-idea"
-cask "iterm2"
-cask "libreoffice"
-cask "memoryanalyzer"
-cask "microsoft-auto-update"
-cask "microsoft-teams"
-cask "oracle-jdk"
-cask "postman"
-cask "rectangle"
-cask "slack"
-cask "sublime-text"
-cask "tableplus"
-cask "temurin"
-cask "visual-studio-code"
-cask "visualvm"
-cask "whisky"
-cask "zoom"
-mas "Clocker", id: 1056643111
+
+# ============================================================
+# Mac App Store
+# ============================================================
 mas "Dato", id: 1470584107
-mas "Free Ruler", id: 1483172210
-mas "GoPro Quik", id: 561350520
+mas "HP", id: 1474276998
 mas "NordVPN", id: 905953485
+mas "Numbers", id: 409203825
 mas "Pixelmator Pro", id: 1289583905
-mas "Slack", id: 803453959
-mas "WhatsApp", id: 310633997
-vscode "github.copilot"
-vscode "github.copilot-chat"
+
+# ============================================================
+# uv / npm global tools
+# ============================================================
+uv "claude-monitor"
+npm "@github/copilot"
+npm "@json2csv/cli"
+
+# ============================================================
+# VS Code extensions
+# ============================================================
+vscode "anthropic.claude-code"
 vscode "inferrinizzard.prettier-sql-vscode"
 vscode "k--kato.intellij-idea-keybindings"
 vscode "kevinrose.vsc-python-indent"
 vscode "mechatroner.rainbow-csv"
+vscode "meezilla.json"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
@@ -146,11 +171,9 @@ vscode "ms-toolsai.vscode-jupyter-slideshow"
 vscode "redhat.java"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
-vscode "vscjava.migrate-java-to-azure"
 vscode "vscjava.vscode-gradle"
 vscode "vscjava.vscode-java-debug"
 vscode "vscjava.vscode-java-dependency"
 vscode "vscjava.vscode-java-pack"
 vscode "vscjava.vscode-java-test"
-vscode "vscjava.vscode-java-upgrade"
 vscode "vscjava.vscode-maven"
