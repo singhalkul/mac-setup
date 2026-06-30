@@ -13,3 +13,9 @@ defaults write NSGlobalDomain com.apple.scrollwheel.scaling -int 1
 echo ">> Setup keyboard speed parameters"
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain KeyRepeat -int 2
+
+# Text input (dev-friendly: don't mangle code/config snippets)
+echo ">> Disable auto-correct, smart quotes and smart dashes"
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
