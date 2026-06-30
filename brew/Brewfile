@@ -103,6 +103,7 @@ cask "firefox"
 cask "slack"
 cask "microsoft-teams"
 cask "zoom"
+cask "whatsapp"
 
 # ---- Editors / IDEs / dev ----
 cask "visual-studio-code"
@@ -125,9 +126,12 @@ cask "stats"
 cask "sloth"
 cask "aws-vault-binary"
 
-# ---- Office / misc ----
+# ---- Office / media ----
 cask "libreoffice"
+cask "microsoft-office"
 cask "microsoft-auto-update"
+cask "vlc"
+cask "handbrake"
 
 # ---- Fonts ----
 cask "font-fira-code"
@@ -139,6 +143,7 @@ cask "font-powerline-symbols"
 # ============================================================
 mas "Dato", id: 1470584107
 mas "HP", id: 1474276998
+mas "Keynote", id: 409183694
 mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
 mas "Pixelmator Pro", id: 1289583905

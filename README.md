@@ -49,6 +49,21 @@ Make changes via the Alfred UI and commit the file.
 ## iStat Menus
 Update the menu structure as required
 
+## App preferences (Stats, VS Code, …)
+Some app configs are version-controlled and restored by `install.sh`:
+
+* **Stats** (and any other menu-bar app) — preferences are stored as plist
+  exports in `osx/app-defaults/<domain>.plist` and re-applied by
+  `osx/app-defaults.sh`. After changing settings in the app, re-capture with
+  the `app_defaults_export` fish function (add new domains to it as needed).
+* **VS Code** — `vscode/settings.json` (and `keybindings.json` if present) are
+  symlinked into `~/Library/Application Support/Code/User/` by
+  `vscode/install.sh`. Extensions are handled by the Brewfile (`vscode "…"`).
+
+Not captured (by design): the **menu-bar icon arrangement** (not reliably
+exportable on modern macOS), the **Dock** (no apps pinned), and **Dato**
+(sandboxed prefs contain calendar PII).
+
 # Manual items
 
 1. ~/.ssh
@@ -57,6 +72,9 @@ Update the menu structure as required
    `shell/secrets.fish.example`; fill in real values (work env vars, tokens,
    GPG signing keys). It is gitignored — never commit populated secrets.
 1. iStat Menus - Menu configurations import
+1. **Dozer** (menu-bar hider) — its Homebrew cask is discontinued; install
+   manually or switch to a maintained alternative (e.g. `jordanbaird-ice`).
+1. Dato / menu-bar icon order — arrange manually.
 
 # Pending items
 

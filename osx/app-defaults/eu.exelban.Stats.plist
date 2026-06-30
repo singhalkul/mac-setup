@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Battery_barChart_position</key>
+	<integer>4</integer>
+	<key>Battery_batteryDetails_position</key>
+	<integer>3</integer>
+	<key>Battery_battery_position</key>
+	<integer>0</integer>
+	<key>Battery_label_position</key>
+	<integer>2</integer>
+	<key>Battery_mini_position</key>
+	<integer>1</integer>
+	<key>Battery_state</key>
+	<true/>
+	<key>Battery_widget</key>
+	<string>battery</string>
+	<key>CPU_barChart_position</key>
+	<integer>3</integer>
+	<key>CPU_label_position</key>
+	<integer>1</integer>
+	<key>CPU_lineChart_position</key>
+	<integer>2</integer>
+	<key>CPU_mini_position</key>
+	<integer>0</integer>
+	<key>CPU_pieChart_position</key>
+	<integer>4</integer>
+	<key>CPU_state</key>
+	<false/>
+	<key>CPU_tachometer_position</key>
+	<integer>5</integer>
+	<key>CPU_updateInterval</key>
+	<integer>1</integer>
+	<key>CPU_widget</key>
+	<string>mini</string>
+	<key>Disk_state</key>
+	<false/>
+	<key>LaunchAtLoginNext</key>
+	<true/>
+	<key>NSStatusItem Preferred Position Battery_battery</key>
+	<real>721</real>
+	<key>NSStatusItem Preferred Position Sensors_mini</key>
+	<real>511</real>
+	<key>NSToolbar Configuration eu.exelban.Stats.Settings.Toolbar</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<true/>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame eu.exelban.Stats.Settings.WindowFrame</key>
+	<string>600 342 728 480 0 0 1512 948 </string>
+	<key>Network_state</key>
+	<false/>
+	<key>RAM_state</key>
+	<false/>
+	<key>Sensors_fanControl</key>
+	<true/>
+	<key>Sensors_fanValue</key>
+	<string>percentage</string>
+	<key>Sensors_hid</key>
+	<false/>
+	<key>Sensors_sensor</key>
+	<string>Hottest CPU</string>
+	<key>Sensors_state</key>
+	<true/>
+	<key>Sensors_unknown</key>
+	<false/>
+	<key>dockIcon</key>
+	<false/>
+	<key>fan_0_mode</key>
+	<integer>0</integer>
+	<key>fan_0_speed</key>
+	<integer>6550</integer>
+	<key>remote_id</key>
+	<string>FCFD1C27-B22C-4C07-8BE8-6AC3C5CB2668</string>
+	<key>remote_tokens_migrated_to_keychain</key>
+	<true/>
+	<key>runAtLoginInitialized</key>
+	<true/>
+	<key>sensor_Average CPU</key>
+	<true/>
+	<key>sensor_Average GPU</key>
+	<true/>
+	<key>sensor_Hottest CPU</key>
+	<true/>
+	<key>sensor_Hottest GPU</key>
+	<true/>
+	<key>sensor_TB1T</key>
+	<true/>
+	<key>setupProcess</key>
+	<true/>
+	<key>support_ts</key>
+	<integer>1781703646</integer>
+	<key>temperature_units</key>
+	<string>fahrenheit</string>
+	<key>updater_check_ts</key>
+	<integer>1782739205</integer>
+	<key>updater_install_ts</key>
+	<integer>1781703652</integer>
+	<key>version</key>
+	<string>3.0.5</string>
+</dict>
+</plist>
