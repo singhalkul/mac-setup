@@ -1,4 +1,5 @@
 #!/bin/sh
+cd "$(dirname "$0")/.." || exit 1   # repo root, independent of caller's CWD
 
 echo
 echo "> alfred/install.sh"

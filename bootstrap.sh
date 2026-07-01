@@ -1,22 +1,30 @@
-zip_file=~/Downloads/mac-setup.zip
-extract_dir=~/Downloads/mac-setup
-branch=main
-
-set -x
+#!/bin/sh
 set -e
 
-echo ">> Download latest code from $branch to $zip_file"
-curl -o $zip_file -Li https://github.com/singhalkul/mac-setup/archive/$branch.zip
+repo_url="https://github.com/singhalkul/mac-setup.git"
+repo_dir="$HOME/projects/personal/mac-setup"
 
-echo ">> Extract $zip_file to $extract_dir"
-set +e
-unzip $zip_file -d $extract_dir
-set -e
+# --- Command Line Tools (provides git) ---
+# On a fresh Mac this pops a GUI installer; wait for it to finish.
+if ! xcode-select -p >/dev/null 2>&1; then
+  echo ">> Installing Command Line Tools — accept the dialog that appears"
+  xcode-select --install || true
+  printf ">> Waiting for Command Line Tools to finish installing"
+  until xcode-select -p >/dev/null 2>&1; do printf "."; sleep 15; done
+  echo " done"
+fi
 
-echo ">> Open $extract_dir/mac-setup-main"
-cd "$extract_dir/mac-setup-main"
-echo ">> Run install"
+# --- Clone (or update) the repo at its PERMANENT location ---
+# Cloning here (not a throwaway Downloads copy) means the symlinks that
+# install.sh creates point at a path that will still exist afterwards.
+echo ">> Fetching mac-setup into $repo_dir"
+mkdir -p "$(dirname "$repo_dir")"
+if [ -d "$repo_dir/.git" ]; then
+  git -C "$repo_dir" pull --ff-only
+else
+  git clone "$repo_url" "$repo_dir"
+fi
+
+cd "$repo_dir"
+echo ">> Running install"
 sh install.sh
-
-echo ">> Remove $extract_dir and $zip_file"
-rm -rf $extract_dir $zip_file

@@ -1,12 +1,18 @@
 # Setting up your machine
 
-1. Ensure your machine is running (at least) OSX Catalina
+1. Ensure your machine is running a recent macOS
+1. **Sign in to the App Store first** — the `mas` apps only install if you're signed in
 1. Run `bash <(curl -s https://raw.githubusercontent.com/singhalkul/mac-setup/main/bootstrap.sh)`
-1. Log out and back in to apply OSX changes (can be done at the end)
-1. Login to the App Store in the background (before mac apps get installed)
+   - Installs Command Line Tools (accept the dialog), clones this repo to
+     `~/projects/personal/mac-setup`, and runs `install.sh` from there — so the
+     symlinks it creates point at a permanent location.
+   - Enter your password when prompted (Homebrew, `chsh`, iTerm2 plist) and
+     accept the app permission dialogs (Alfred, VS Code, …).
 1. Restore the list of Manual Items (below)
-1. Run `mkdir -p ~/projects/personal && cd ~/projects/personal && git clone git@github.com:singhalkul/mac-setup.git && cd mac-setup && ./install.sh` to move shell configurations to a more permanent path. Restart shell to apply changes
-1. Log out and back in to apply OSX changes (can be ignored if it hasn't been already done)
+1. Restart your shell, then log out and back in to apply all macOS changes
+
+> Re-running: `cd ~/projects/personal/mac-setup && ./install.sh` is safe and
+> idempotent — it can be run from anywhere (each script resolves the repo root).
 
 # Updating the codebase over time
 
