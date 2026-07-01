@@ -117,9 +117,13 @@ exportable on modern macOS), the **Dock** (no apps pinned), and **Dato**
 
 1. ~/.ssh
 1. ~/.gnupg
-1. `~/.config/fish/conf.d/secrets.fish` — `install.sh` seeds this from
-   `shell/secrets.fish.example`; fill in real values (work env vars, tokens,
-   GPG signing keys). It is gitignored — never commit populated secrets.
+1. **Secrets** — real credentials live in the macOS **Keychain** (service
+   `mac-setup`), loaded on demand by the `load-secrets` fish function
+   (`shell/load_secrets.fish`). Store each with
+   `security add-generic-password -s mac-setup -a <NAME> -w '<value>' -U`, then
+   run `load-secrets`. Non-secret work config (AWS_PROFILE, KOPS_STATE_STORE,
+   Cypress usernames/Auth0 IDs, GPG signing) goes in the gitignored
+   `~/.config/fish/conf.d/secrets.fish` (seeded from `shell/secrets.fish.example`).
 1. iStat Menus - Menu configurations import
 1. **Dozer** (menu-bar hider) — its Homebrew cask is discontinued; install the
    app manually (or switch to a maintained alternative like `jordanbaird-ice`).
@@ -130,5 +134,3 @@ exportable on modern macOS), the **Dock** (no apps pinned), and **Dato**
 
 * OSX
     * Spotlight shortcut (currently done by Bartender)
-* Move remaining secrets from plain env vars in `secrets.fish` into the macOS
-  Keychain (see `gitlab_token` for the pattern)
