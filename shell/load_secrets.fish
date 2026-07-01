@@ -8,7 +8,6 @@
 # set at shell startup. Only real credentials go through the Keychain, on demand.
 function load-secrets --description 'Load Keychain-stored secrets into this shell'
     set -l names \
-        AWS_RELEASES_ACCESS_KEY AWS_RELEASES_SECRET_KEY \
         CYPRESS_MP_SERVICE_MANAGER_PWD CYPRESS_AUTH0_CLIENT_SECRET \
         CYPRESS_MP_ADMIN_PWD
     set -l missing
