@@ -1,5 +1,4 @@
 {
-    "github.copilot.nextEditSuggestions.enabled": true,
     "security.workspace.trust.untrustedFiles": "open",
     "editor.largeFileOptimizations": false
 }
