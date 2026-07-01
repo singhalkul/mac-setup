@@ -42,9 +42,14 @@ Open `Preferences > General > Preferences` and set the config path to `<base-pat
 Make changes via the iterm2 UI and commit the file.
 
 ## Alfred
-Open `Preferences > Advanced > Set Preferences Folder` and set the config path to `<base-path>/mac-setup/alfred`
+Automated by `alfred/install.sh`: it symlinks
+`~/Library/Application Support/Alfred/Alfred.alfredpreferences` to
+`alfred/Alfred.alfredpreferences` in the repo, so Alfred reads and writes the
+repo copy directly. Make changes via the Alfred UI and commit them.
 
-Make changes via the Alfred UI and commit the file.
+(The `defaults`-based "Set preferences folder" approach is intentionally not
+used — Alfred 5 manages that key via its own UI and overwrites it when set
+headlessly, so the symlink is the reliable route.)
 
 ## iStat Menus
 Update the menu structure as required

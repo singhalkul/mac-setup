@@ -5,5 +5,5 @@ sh brew/install.sh
 sh shell/install.sh
 sh iterm2/install.sh
 sh vscode/install.sh
-#sh alfred/install.sh
+sh alfred/install.sh
 sh osx/install.sh
