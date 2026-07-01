@@ -1,3 +1,39 @@
+# mac-setup
+
+Automated setup for a new Mac. One bootstrap command installs the apps, makes
+fish the shell, applies macOS defaults, and links app configs — so a fresh
+machine ends up matching this one.
+
+## What it sets up
+- **Apps & CLI tools** — Homebrew via `brew/Brewfile`: formulae, casks, App
+  Store apps (`mas`), VS Code extensions, and `uv`/`npm` globals.
+- **Shell** — fish as the default shell with OMF + bobthefish, aliases, and a
+  `config.fish` wiring up mise, direnv, colima, autojump and fzf.
+- **Runtimes** — Java / Node / Python managed by [`mise`](https://mise.jdk.tools)
+  (`uv` for Python packaging; `pipenv` for legacy Pipfiles).
+- **macOS defaults** — Dock, Finder, keyboard/trackpad, screenshots, privacy,
+  dark mode.
+- **App configs** — iTerm2, Alfred, Stats, Dozer, VS Code settings and the
+  global gitignore, all symlinked/imported from this repo.
+
+## Repo layout
+| Path | Purpose |
+|------|---------|
+| `bootstrap.sh` | Entry point: installs Command Line Tools, clones this repo to `~/projects/personal/mac-setup`, runs `install.sh`. |
+| `install.sh` | Orchestrates the sub-installers below (from the repo root). |
+| `brew/` | `Brewfile` (hand-curated) + Homebrew installer. |
+| `shell/` | fish `config.fish`, `conf.d` fragments, OMF setup, git config, secrets template. |
+| `iterm2/` | iTerm2 preferences (loaded via custom-folder setting). |
+| `vscode/` | VS Code `settings.json`. |
+| `alfred/` | Alfred preferences bundle (symlinked into place). |
+| `osx/` | macOS `defaults` scripts + captured app prefs in `app-defaults/`. |
+| `common/` | Shared shell helpers. |
+
+Every script is **idempotent** and **location-independent** (each resolves the
+repo root from its own path), so `./install.sh` is safe to re-run from anywhere.
+
+---
+
 # Setting up your machine
 
 1. Ensure your machine is running a recent macOS
@@ -94,6 +130,5 @@ exportable on modern macOS), the **Dock** (no apps pinned), and **Dato**
 
 * OSX
     * Spotlight shortcut (currently done by Bartender)
-* Move secrets from plain env vars into the macOS Keychain (see
-  `gitlab_token` for the pattern)
-* Automate mac-setup checkout process
+* Move remaining secrets from plain env vars in `secrets.fish` into the macOS
+  Keychain (see `gitlab_token` for the pattern)
