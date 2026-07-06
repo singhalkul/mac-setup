@@ -1,10 +1,9 @@
 function brewfile
-  set -l file ~/projects/personal/mac-setup/brew/Brewfile
-  brew bundle dump --file=$file --force
-  # `brew bundle dump` omits tap-qualified formulae, so re-append the ones we use.
-  for f in alajmo/mani/mani hashicorp/tap/terraform mongodb/brew/mongodb-community mongodb/brew/mongodb-database-tools
-    echo "brew \"$f\"" >> $file
-  end
+  # Tapped formulae (mani, terraform, mongodb-community) are only dropped by
+  # `brew bundle dump` when their taps are untrusted. Once the taps are trusted
+  # (see `brew trust` in brew/install.sh; persisted in ~/.homebrew/trust.json),
+  # dump emits them with `trusted: true`, so no manual re-appending is needed.
+  brew bundle dump --file=~/projects/personal/mac-setup/brew/Brewfile --force
 end
 
 # Re-capture app preferences into the repo (run after changing settings in the app).
