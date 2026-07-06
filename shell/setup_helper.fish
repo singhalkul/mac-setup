@@ -1,5 +1,5 @@
 function brewfile
-  brew bundle dump --file=~/projects/personal/mac-setup/brew/Brewfile --cleanup --force
+  brew bundle dump --file=~/projects/personal/mac-setup/brew/Brewfile --force
 end
 
 # Re-capture app preferences into the repo (run after changing settings in the app).
