@@ -1,6 +1,6 @@
-tap "alajmo/mani"
-tap "hashicorp/tap"
-tap "mongodb/brew"
+tap "alajmo/mani", trusted: true
+tap "hashicorp/tap", trusted: true
+tap "mongodb/brew", trusted: true
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Official Amazon AWS command-line interface
@@ -129,6 +129,12 @@ brew "wxwidgets"
 brew "yasm"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# CLI tool to help you manage multiple repositories
+brew "alajmo/mani/mani"
+# Terraform
+brew "hashicorp/tap/terraform"
+# High-performance, schema-free, document-oriented database
+brew "mongodb/brew/mongodb-community"
 # Application launcher and productivity software
 cask "alfred"
 # Application uninstaller
