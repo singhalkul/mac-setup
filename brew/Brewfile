@@ -79,6 +79,8 @@ brew "openjdk@17"
 brew "p7zip"
 # Python dependency management tool
 brew "pipenv"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Cross-platform library for audio I/O
 brew "portaudio"
 # Object-relational database system
