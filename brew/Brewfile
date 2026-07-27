@@ -75,8 +75,12 @@ brew "node"
 brew "mongosh"
 # Development kit for the Java programming language
 brew "openjdk@17"
+# Development kit for the Java programming language
+brew "openjdk@25"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Python dependency management tool
 brew "pipenv"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -192,6 +196,8 @@ cask "tableplus"
 cask "temurin"
 # Open-source code editor
 cask "visual-studio-code"
+# All-in-One Java Troubleshooting Tool
+cask "visualvm"
 # Multimedia player
 cask "vlc"
 # Native desktop client for WhatsApp
