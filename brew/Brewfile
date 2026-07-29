@@ -1,4 +1,5 @@
 tap "alajmo/mani", trusted: true
+tap "flamingock/tap", trusted: true
 tap "hashicorp/tap", trusted: true
 tap "mongodb/brew", trusted: true
 # Shell extension to jump to frequently used directories
@@ -55,6 +56,8 @@ brew "harfbuzz"
 brew "openjdk"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
+# Vulnerability scanner for container images and filesystems
+brew "grype"
 # Java language specific implementation of the Language Server Protocol
 brew "jdtls"
 # Lightweight and flexible command-line JSON processor
@@ -104,9 +107,9 @@ brew "python@3.12"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Messaging and streaming broker
-brew "rabbitmq"
+brew "rabbitmq", restart_service: :changed
 # Persistent key-value database, with built-in net interface
-brew "redis"
+brew "redis", restart_service: :changed
 # Proxy server that works as a poor man's VPN
 brew "sshuttle"
 # Tool Command Language
@@ -137,6 +140,8 @@ brew "yasm"
 brew "yq"
 # CLI tool to help you manage multiple repositories
 brew "alajmo/mani/mani"
+# CLI tool for executing Flamingock change operations outside the application lifecycle
+brew "flamingock/tap/flamingock"
 # Terraform
 brew "hashicorp/tap/terraform"
 # High-performance, schema-free, document-oriented database
@@ -235,4 +240,5 @@ vscode "vscjava.vscode-java-pack"
 vscode "vscjava.vscode-java-test"
 vscode "vscjava.vscode-maven"
 uv "claude-monitor"
+npm "@cyclonedx/cdxgen"
 npm "@json2csv/cli"
