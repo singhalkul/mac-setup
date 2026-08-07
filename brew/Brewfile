@@ -58,6 +58,8 @@ brew "openjdk"
 brew "gradle"
 # Vulnerability scanner for container images and filesystems
 brew "grype"
+# Kubernetes package manager
+brew "helm"
 # Java language specific implementation of the Language Server Protocol
 brew "jdtls"
 # Lightweight and flexible command-line JSON processor
