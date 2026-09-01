@@ -88,6 +88,8 @@ brew "p7zip"
 brew "pandoc"
 # Python dependency management tool
 brew "pipenv"
+# Python package management tool
+brew "poetry"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Cross-platform library for audio I/O
