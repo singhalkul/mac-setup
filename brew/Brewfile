@@ -161,7 +161,7 @@ cask "aws-vault-binary"
 # Desktop password and login vault
 cask "bitwarden"
 # Terminal-based AI coding assistant
-cask "claude-code"
+cask "claude-code@latest"
 # Clipboard extension app
 cask "clipy"
 # Web browser
@@ -250,3 +250,4 @@ vscode "vscjava.vscode-maven"
 uv "claude-monitor"
 npm "@cyclonedx/cdxgen"
 npm "@json2csv/cli"
+npm "ccstatusline"
