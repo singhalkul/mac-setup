@@ -55,15 +55,15 @@ brew "go"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Development kit for the Java programming language
-brew "openjdk@25"
+brew "openjdk"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
 # Vulnerability scanner for container images and filesystems
 brew "grype"
 # Kubernetes package manager
 brew "helm"
-# Development kit for the Java programming language
-brew "openjdk"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Java language specific implementation of the Language Server Protocol
 brew "jdtls"
 # Lightweight and flexible command-line JSON processor
@@ -84,6 +84,8 @@ brew "node"
 brew "mongosh"
 # Development kit for the Java programming language
 brew "openjdk@17"
+# Development kit for the Java programming language
+brew "openjdk@25"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Swiss-army knife of markup format conversion
