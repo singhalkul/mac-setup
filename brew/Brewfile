@@ -98,8 +98,6 @@ brew "poetry"
 brew "poppler"
 # Cross-platform library for audio I/O
 brew "portaudio"
-# Object-relational database system
-brew "postgresql@14"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Interpreted, interactive, object-oriented programming language
@@ -252,4 +250,6 @@ vscode "vscjava.vscode-maven"
 go "github.com/avito-tech/go-mutesting/cmd/go-mutesting"
 uv "claude-monitor"
 uv "graphifyy"
-npm "corepack"
+npm "@cyclonedx/cdxgen"
+npm "@json2csv/cli"
+npm "ccstatusline"
